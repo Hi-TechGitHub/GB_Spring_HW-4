@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+
+<table>
+    <tr th:each="student : ${students}">
+        <td th:text="${student}"></td>
+        <td>
+            <form th:action="@{/delete/{student}(value=${student})}" method="get">
+                <button type="submit">Удалить</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
